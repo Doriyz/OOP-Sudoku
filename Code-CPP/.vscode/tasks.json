@@ -6,10 +6,20 @@
             "command": "C:\\Users\\Maysion\\SDKs\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
+
+                // "g++ ${fileDirname}/**.cc}",
+
                 "-g",
-                "${file}",
+                    "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                    "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I",
+                    // "${fileDirname/**.cc}", 
+                    "${fileDirname}",
+                    "grid.h",
+                    "sudoku.h",
+                    "grid.cc",
+                    "sudoku.cc"
             ],
             "options": {
                 "cwd": "${fileDirname}"

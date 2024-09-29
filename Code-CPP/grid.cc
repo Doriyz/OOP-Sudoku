@@ -75,8 +75,6 @@ bool Grid::GetInference(){
         std::cout << std::endl;
         std::cout << "Done." << std::endl; 
         
-        std::cout << GRID_SIZE << "  " << GRID_SIZE << std::endl; 
-        
 
         for (int i = 0; i < GRID_SIZE; i++) {        // 遍历行
             for (int j = 0; j < GRID_SIZE; j++) { // 遍历列

@@ -10,12 +10,12 @@ Sudoku::Sudoku(): Grid() {
 
 Sudoku::~Sudoku(){}
 
-// 数独推理函数：解数独
-bool Sudoku::getInference() {
-    return grid.GetInference(); 
-}
+// // 数独推理函数：解数独
+// bool Sudoku::getInference() {
+//     return grid.GetInference(); 
+// }
 
-//  打印数独结果
-void Sudoku::print(){
-    grid.Print();
-}
+// //  打印数独结果
+// void Sudoku::print(){
+//     grid.Print();
+// }

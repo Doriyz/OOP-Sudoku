@@ -18,8 +18,10 @@ public:
     void SetNum(int row, int col, int num);
     int GetNum(int row, int col);
     ~Grid();
+    
     bool GetInference();
     void Print();
+
     bool BackTracking(std::vector<std::vector<int>>& grid);
     bool isValid(int row, int col, int val, std::vector<std::vector<int>>& grid);
 

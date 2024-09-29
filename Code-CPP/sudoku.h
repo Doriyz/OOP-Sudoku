@@ -11,7 +11,7 @@ private:
 
 public:
     Sudoku(const std::string& input); // 从字符串初始化数独
-    bool getInference(); // 解数独
+    // bool getInference(); // 解数独
     Sudoku(); // 构造函数
     void print();
 

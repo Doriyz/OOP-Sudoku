@@ -120,3 +120,18 @@ void Grid::Print(){
         std::cout << std::endl;
     }
 }
+
+
+// successfully pass test
+int main(){
+    Grid grid("017903600000080000900000507072010430000402070064370250701000065000030000005601720");
+
+    std::cout << std::endl << "the init grid" << std::endl;
+    grid.Print();
+    grid.GetInference();
+
+    std::cout << std::endl << "the final grid" << std::endl;
+    grid.Print();
+    
+    return 0; 
+}

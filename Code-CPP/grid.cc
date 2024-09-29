@@ -12,9 +12,13 @@ Grid::Grid(const std::string& input) {
         for (int j = 0; j < GRID_SIZE; j++) {
             int val = input[i * GRID_SIZE + j] - '0';
             row.push_back(val);
+
+            std::cout << val << " ";
         }
+        std::cout << std::endl;
         grid.push_back(row);
     }
+
 }
 
 
@@ -33,16 +37,16 @@ Grid::~Grid() {
     // 析构函数
 }
 
-void Grid::Init(const std::string& input) {
-    for (int i = 0; i < GRID_SIZE; i++) {
-        std::vector<int> row;
-        for (int j = 0; j < GRID_SIZE; j++) {
-            int val = input[i * GRID_SIZE + j] - '0';
-            row.push_back(val);
-        }
-        grid.push_back(row);
-    }
-}
+// void Grid::Init(const std::string& input) {
+//     for (int i = 0; i < GRID_SIZE; i++) {
+//         std::vector<int> row;
+//         for (int j = 0; j < GRID_SIZE; j++) {
+//             int val = input[i * GRID_SIZE + j] - '0';
+//             row.push_back(val);
+//         }
+//         grid.push_back(row);
+//     }
+// }
 
 
 std::vector<int> Grid::GetRow(int row) {
@@ -80,10 +84,35 @@ int Grid::GetNum(int row, int col){
 }
 
 bool Grid::GetInference(){
-    BackTracking(grid);
+    // return BackTracking(grid);
+
+        std::cout << grid.size();
+
+    if(BackTracking(grid) == true){
+        
+        std::cout << std::endl;
+        std::cout << "Done." << std::endl; 
+        
+        std::cout << GRID_SIZE << "  " << GRID_SIZE << std::endl; 
+        
+
+        for (int i = 0; i < GRID_SIZE; i++) {        // 遍历行
+            for (int j = 0; j < GRID_SIZE; j++) { // 遍历列
+                std::cout << "gh";
+                std::cout << grid[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        return true;
+    }
+    return false;
+
 }
 
-bool BackTracking(std::vector<std::vector<int>>& grid) {
+bool Grid::BackTracking(std::vector<std::vector<int>>& grid) {
+    std::cout << "size " << grid.size() << std::endl;
+
+
     for (int i = 0; i < grid.size(); i++) {        // 遍历行
         for (int j = 0; j < grid[0].size(); j++) { // 遍历列
             if (grid[i][j] != 0) continue;
@@ -91,7 +120,7 @@ bool BackTracking(std::vector<std::vector<int>>& grid) {
                 if (isValid(i, j, k, grid)) { 
                     grid[i][j] = k;                // 放置k
                     if (BackTracking(grid)) return true; // 如果找到合适一组立刻返回
-                    grid[i][j] = '.';              // 回溯，撤销k
+                    grid[i][j] = 0;              // 回溯，撤销k
                 }
             }
             return false;                           // 9个数都试完了，都不行，那么就返回false
@@ -100,7 +129,7 @@ bool BackTracking(std::vector<std::vector<int>>& grid) {
     return true; // 遍历完没有返回false，说明找到了合适棋盘位置了
 }
 
-bool isValid(int row, int col, int val, std::vector<std::vector<int>>& grid) {
+bool Grid::isValid(int row, int col, int val, std::vector<std::vector<int>>& grid) {
     for (int i = 0; i < 9; i++) { // 判断行里是否重复
         if (grid[row][i] == val) {
             return false;

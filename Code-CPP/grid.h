@@ -23,6 +23,9 @@ public:
     ~Grid();
     bool GetInference();
     void Print();
+    bool BackTracking(std::vector<std::vector<int>>& grid);
+    bool isValid(int row, int col, int val, std::vector<std::vector<int>>& grid);
+
 
     void Init(const std::string& input); // 使用数字串初始化
     std::vector<int> GetRow(int row); // 获取所在行的所有数字

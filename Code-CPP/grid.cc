@@ -67,25 +67,7 @@ int Grid::GetNum(int row, int col){
 }
 
 bool Grid::GetInference(){
-    // return BackTracking(grid);
-
-
-    if(BackTracking(grid) == true){
-        
-        std::cout << std::endl;
-        std::cout << "Done." << std::endl; 
-        
-
-        for (int i = 0; i < GRID_SIZE; i++) {        // 遍历行
-            for (int j = 0; j < GRID_SIZE; j++) { // 遍历列
-                std::cout << grid[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-        return true;
-    }
-    return false;
-
+    return BackTracking(grid);
 }
 
 bool Grid::BackTracking(std::vector<std::vector<int>>& grid) {

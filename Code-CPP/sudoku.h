@@ -12,24 +12,17 @@ private:
 public:
     Sudoku(const std::string& input); // 从字符串初始化数独
     bool getInference(); // 解数独
-
-
     Sudoku(); // 构造函数
+    void print();
+
+
     Sudoku(const Sudoku& other); // 拷贝构造函数
     Sudoku& operator=(const Sudoku& other); // 赋值操作符重载
     ~Sudoku(); // 析构函数
-
     std::string serialize() const; // 序列化
-    void deserialize(const std::string& data); // 反序列化
-
     bool operator==(const Sudoku& other) const; // 比较操作符重载
-
-    void print() const; // 打印数独
     bool isValid() const; // 检查数独是否合法
 
-
-
-    int GetNum(int row, int col);
 };
 
 #endif

@@ -23,30 +23,13 @@ Grid::Grid(const std::string& input) {
 
 
 Grid::Grid() {
-    // for (int i = 0; i < GRID_SIZE; i++) {
-    //     std::vector<int> row;
-    //     for (int j = 0; j < GRID_SIZE; j++) {
-    //         row.push_back(0);
-    //     }
-    //     grid.push_back(row);
-    // }
+
 }
 
 
 Grid::~Grid() {
     // 析构函数
 }
-
-// void Grid::Init(const std::string& input) {
-//     for (int i = 0; i < GRID_SIZE; i++) {
-//         std::vector<int> row;
-//         for (int j = 0; j < GRID_SIZE; j++) {
-//             int val = input[i * GRID_SIZE + j] - '0';
-//             row.push_back(val);
-//         }
-//         grid.push_back(row);
-//     }
-// }
 
 
 std::vector<int> Grid::GetRow(int row) {
@@ -86,7 +69,6 @@ int Grid::GetNum(int row, int col){
 bool Grid::GetInference(){
     // return BackTracking(grid);
 
-        std::cout << grid.size();
 
     if(BackTracking(grid) == true){
         
@@ -98,7 +80,6 @@ bool Grid::GetInference(){
 
         for (int i = 0; i < GRID_SIZE; i++) {        // 遍历行
             for (int j = 0; j < GRID_SIZE; j++) { // 遍历列
-                std::cout << "gh";
                 std::cout << grid[i][j] << " ";
             }
             std::cout << std::endl;

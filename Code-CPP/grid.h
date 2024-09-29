@@ -12,11 +12,15 @@ public:
     const int GRID_SIZE = 9;
 
 public:
-    Grid();
+    Grid(); 
     ~Grid();
-    std::vector<int> getRow(int row);
-    std::vector<int> getColumn(int col);
-    std::vector<int> getBox(int row, int col);
+    void Init(const std::string& input); // 使用数字串初始化
+    std::vector<int> GetRow(int row); // 获取所在行的所有数字
+    std::vector<int> GetColumn(int col); // 获取所在列的所有数字
+    std::vector<int> GetBox(int row, int col); // 获取所在小方块的所有数字
+
+    void SetNum(int row, int col, int num);
+    int GetNum(int row, int col);
 };
 
 #endif

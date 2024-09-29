@@ -91,8 +91,6 @@ bool Grid::GetInference(){
 }
 
 bool Grid::BackTracking(std::vector<std::vector<int>>& grid) {
-    std::cout << "size " << grid.size() << std::endl;
-
 
     for (int i = 0; i < grid.size(); i++) {        // 遍历行
         for (int j = 0; j < grid[0].size(); j++) { // 遍历列
